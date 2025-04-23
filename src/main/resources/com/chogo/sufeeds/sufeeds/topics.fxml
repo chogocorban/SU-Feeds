@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="topics_VBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chogo.sufeeds.sufeeds.TopicsController">
+   <children>
+      <AnchorPane prefHeight="114.0" prefWidth="800.0" style="-fx-background-color: #485696;">
+         <children>
+            <Label layoutX="366.0" layoutY="14.0" text="Topics" textFill="#e7e7e7">
+               <font>
+                  <Font name="Candara Bold" size="36.0" />
+               </font></Label>
+            <Button fx:id="nav_to_classes_topics" layoutX="12.0" layoutY="57.0" mnemonicParsing="false" onAction="#onSwitchClasses_topics" style="-fx-background-color: #f24c00;" text="Classes" textFill="#e7e7e7">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Button>
+            <Button fx:id="nav_to_topics_topics" layoutX="106.0" layoutY="57.0" mnemonicParsing="false" onAction="#onSwitchTopics_topics" style="-fx-background-color: #f24c00;" text="Topics" textFill="#e7e7e7">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Button>
+            <Button fx:id="logout_topics" layoutX="703.0" layoutY="57.0" mnemonicParsing="false" onAction="#logOut_topics" style="-fx-background-color: #f24c00;" text="Log Out" textFill="#e7e7e7">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="495.0" prefWidth="800.0" style="-fx-background-color: #fc7a1e;">
+         <children>
+            <ComboBox fx:id="combo_box_topics" layoutX="79.0" layoutY="124.0" onAction="#pickClassComboBox" prefWidth="150.0" promptText="Pick A Class" />
+            <TextArea fx:id="txt_comment" layoutX="33.0" layoutY="313.0" prefHeight="54.0" prefWidth="213.0">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></TextArea>
+            <Label layoutX="102.0" layoutY="291.0" text="Comment" textFill="#e7e7e7">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Label>
+            <TableView fx:id="tbl_topics" layoutX="302.0" layoutY="14.0" onMouseClicked="#getData_topics" prefHeight="353.0" prefWidth="483.0">
+              <columns>
+                  <TableColumn fx:id="col_topic_id" prefWidth="52.66668701171875" text="Topic ID" />
+                  <TableColumn fx:id="col_student_regno" prefWidth="74.66665649414062" text="Student no." />
+                <TableColumn fx:id="col_class_code" prefWidth="67.99993896484375" text="Class Code" />
+                <TableColumn fx:id="col_topic" minWidth="0.0" prefWidth="94.66665649414062" text="Topic" />
+                  <TableColumn fx:id="col_comment" minWidth="8.666748046875" prefWidth="194.0" text="Comment" />
+              </columns>
+            </TableView>
+            <Button fx:id="btn_update_topics" layoutX="331.0" layoutY="439.0" mnemonicParsing="false" onAction="#updateTopics" style="-fx-background-color: #f24c00;" text="Update" textFill="#e7e7e7">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Button>
+            <Button fx:id="btn_create_topics" layoutX="205.0" layoutY="439.0" mnemonicParsing="false" onAction="#createTopics" style="-fx-background-color: #f24c00;" text="Create" textFill="#e7e7e7">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Button>
+            <Label layoutX="119.0" layoutY="219.0" text="Topic" textFill="#e7e7e7">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Label>
+            <TextField fx:id="txt_topic" layoutX="33.0" layoutY="248.0">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></TextField>
+            <Button fx:id="btn_delete_topics" layoutX="482.0" layoutY="439.0" mnemonicParsing="false" onAction="#deleteTopics" style="-fx-background-color: #f24c00;" text="Delete" textFill="#e7e7e7">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Button>
+            <Label fx:id="lbl_selected" layoutX="140.0" layoutY="161.0" prefHeight="25.0" prefWidth="104.0" style="-fx-border-color: black;">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Label>
+            <Button fx:id="btn_select_class" layoutX="14.0" layoutY="157.0" mnemonicParsing="false" onAction="#getSelected" style="-fx-background-color: #f24c00;" text="Select Class" textFill="#e7e7e7">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Button>
+            <Button fx:id="btn_clear" layoutX="596.0" layoutY="439.0" mnemonicParsing="false" onAction="#clearField_topics" style="-fx-background-color: #f24c00;" text="Clear" textFill="#e7e7e7">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Button>
+            <ComboBox fx:id="combo_box_regno" layoutX="86.0" layoutY="30.0" onAction="#pickRegno" prefHeight="25.0" prefWidth="161.0" promptText="Pick your student no." />
+            <Button fx:id="btn_select_regno" layoutX="10.0" layoutY="61.0" mnemonicParsing="false" onAction="#getSelected_regno" style="-fx-background-color: #f24c00;" text="Select Student no." textFill="#e7e7e7">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Button>
+            <Label fx:id="lbl_selectedregno" layoutX="177.0" layoutY="63.0" prefHeight="30.0" prefWidth="104.0" style="-fx-border-color: black;">
+               <font>
+                  <Font name="Candara" size="18.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
